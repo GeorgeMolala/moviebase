@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import head from "./LoggedIn/header.jsx"
 
 function App() {
   return (
