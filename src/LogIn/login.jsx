@@ -1,5 +1,5 @@
 import React from "react";
-import header from "./header,jsx"
+import "./loginStyling.css"
 
 
 const login = () =>{
@@ -17,7 +17,7 @@ return(
         <div className="LoginSection">
 
          <div className="Username" >
-            <input type="text" placeholder="UserName" className="UserNameInput"></input>
+            <input type="text" placeholder="User Name" className="UserNameInput"></input>
         </div>
 
             <div className="Password">
@@ -25,8 +25,8 @@ return(
             </div>
 
            <div className="LoginButtons">
-                <button>LogIn</button>
-                <button>Cancel</button>
+                <button className="LogIn-Button">Log In</button>
+                <button className="Cancel-Button">Register</button>
            </div>
         
            <div className="forgotPassword">

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-image: url("../public/Images/DirectorCut.jpg");
+  background-size:contain;
 }
 
 .App-logo {
@@ -21,7 +23,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+
+  opacity: 0.9;
 }
 
 .App-link {
