@@ -1,6 +1,8 @@
 import React from "react";
 import "./loginStyling.css";
 import { useEffect, useState, useRef } from "react";
+import { Navigate } from "react-router";
+import { wait } from "@testing-library/user-event/dist/utils";
   
 
 const Login = () =>{
@@ -24,35 +26,43 @@ const Login = () =>{
         "password" : pass
     }
 
-    fetch("https://localhost:44366/api/Register/LogIn",{
+    try{
+         const resp = await fetch("https://localhost:44366/api/Register/LogIn",{
         method:"POST",
-        headers: {"content-type": "application/json"},
+        headers: {"content-Type": "application/json",},
         body: JSON.stringify(UserObject)
-
-    }).then((res) => {
-        console.log("Checking");
-        if (res.StatusCode == 200)
-        {
-            
-            alert("Logged in");
-            
-        }
-        return res.json();
-    }).then(res => {
-        console.log("Logged in");
-        if (res.StatusCode == 200)
-        {
-            
-            alert("Logged in");
-            
-        }
         
-    }).catch((err) => {
 
-        console.log("Error ")
-        
     });
+    
+    const test = await resp.json();
+    console.log(test.token)
 
+    
+    } catch{
+
+        console.log("Error Occured");
+    }
+  
+    
+    // .then((res) => {
+        
+    //      console.log(res);
+    //      if (res.status == 200)
+    //      {
+    //        //  console.log(res);
+           
+            
+    //     }
+        
+    // }).catch((err) => {
+
+    //     console.log("Error ")
+        
+    // });
+
+    
+   
    }
 
 return(
@@ -60,7 +70,7 @@ return(
     <div className="LogIn" id = "logins">
 
         <div className="headerPart">
-            <span> </span>
+            <span> Log In</span>
         </div>
 
         <form className="LoginSection" onSubmit={handleSubmit}>
