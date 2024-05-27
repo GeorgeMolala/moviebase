@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import Heads from "./LoggedIn/header.jsx";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import LogIn from "./LogIn/login.jsx"
+import Routess from './Routes.js'
 
 function App() {
   return (
@@ -9,11 +11,10 @@ function App() {
       
       <header className="App-header">
 
-      <LogIn/>
+          <Routess/>
         
       </header>
 
-      {/* <LogIn/> */}
     </div>
   );
 }
